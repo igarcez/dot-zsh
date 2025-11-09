@@ -9,6 +9,10 @@ if [ -d $HOME/.os_specific_zsh ]; then
     for f in $HOME/.os_specific_zsh/*.zshrc; do source $f; done
 fi
 
+if [ -d $HOME/.zsh_secrets ]; then
+    for f in $HOME/.zsh_secrets/*.zshrc; do source $f; done
+fi
+
 # alias
 alias v="nvim"
 
