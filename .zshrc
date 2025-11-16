@@ -15,6 +15,7 @@ fi
 
 # alias
 alias v="nvim"
+alias lg="lazygit"
 
 if [ -d $HOME/bin ]; then
     export PATH="$HOME/bin:$PATH"
@@ -27,7 +28,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+# history file config
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
