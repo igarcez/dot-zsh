@@ -13,10 +13,6 @@ if [ -d $HOME/.zsh_secrets ]; then
     for f in $HOME/.zsh_secrets/*.zshrc; do source $f; done
 fi
 
-# alias
-alias v="nvim"
-alias lg="lazygit"
-
 if [ -d $HOME/bin ]; then
     export PATH="$HOME/bin:$PATH"
 fi
@@ -24,6 +20,13 @@ fi
 if [ -d $HOME/powerlevel10k ]; then
     source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 fi
+# fix capitalization on autocomplete
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# alias
+alias v="nvim"
+alias lg="lazygit"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
